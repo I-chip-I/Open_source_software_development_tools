@@ -1,0 +1,269 @@
+[gd_scene load_steps=17 format=3 uid="uid://5sgy0k2htp7b"]
+
+[ext_resource type="Script" uid="uid://c63xixmina07g" path="res://Scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://ujc8b1gsf2ka" path="res://Player/Spritesheets player/Front - Walking.png" id="2_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://dkvp0m8a1a5b3" path="res://Player/Spritesheets player/Front - Idle Blinking.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://c23ndqx4gwc6y" path="res://Player/Spritesheets player/Back - Walking.png" id="3_dw050"]
+[ext_resource type="Texture2D" uid="uid://dkgwec1xetrdx" path="res://Player/Spritesheets player/Right - Walking.png" id="4_b26j0"]
+[ext_resource type="Texture2D" uid="uid://jfamjhoepewr" path="res://Player/Spritesheets player/Back - Idle.png" id="6_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://oqr7k3oxv71e" path="res://Player/Spritesheets player/Right - Idle Blinking.png" id="7_nvl01"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2o6t"]
+
+[sub_resource type="Animation" id="Animation_ivps1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_standing_down:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D_standing_up:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D_standing_side:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D_walking_down:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D_walking_up:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D_walking_side:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_urp6f"]
+resource_name = "standing_down"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_standing_down:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_bwjto"]
+resource_name = "standing_up"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_standing_up:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_606se"]
+resource_name = "standing_side"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_standing_side:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.1999903, 1.3, 1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_u1c27"]
+resource_name = "walking_down"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_walking_down:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_op7ga"]
+resource_name = "walking_up"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_walking_up:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.10000001, 0.15, 0.2, 0.25, 0.30001602, 0.35, 0.40000004, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8000001, 0.85, 0.9, 0.9500456),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_q13i1"]
+resource_name = "walking_side"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_walking_side:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.49996418, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8000001, 0.85, 0.90003544, 0.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pylmc"]
+_data = {
+&"RESET": SubResource("Animation_ivps1"),
+&"standing_down": SubResource("Animation_urp6f"),
+&"standing_side": SubResource("Animation_606se"),
+&"standing_up": SubResource("Animation_bwjto"),
+&"walking_down": SubResource("Animation_u1c27"),
+&"walking_side": SubResource("Animation_q13i1"),
+&"walking_up": SubResource("Animation_op7ga")
+}
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+scale = Vector2(4.5, 4.5)
+shape = SubResource("CircleShape2D_e2o6t")
+
+[node name="Sprite2D_walking_down" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(1, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1jxqw")
+hframes = 4
+vframes = 5
+
+[node name="Sprite2D_walking_up" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(-1, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_dw050")
+hframes = 4
+vframes = 5
+
+[node name="Sprite2D_walking_side" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(-1, -77)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_b26j0")
+hframes = 4
+vframes = 5
+
+[node name="Sprite2D_standing_down" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(-1, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_onrkg")
+hframes = 4
+vframes = 4
+
+[node name="Sprite2D_standing_up" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(-1, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_n7ghd")
+hframes = 4
+vframes = 4
+
+[node name="Sprite2D_standing_side" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(-1, -85)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_nvl01")
+hframes = 4
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pylmc")
+}
