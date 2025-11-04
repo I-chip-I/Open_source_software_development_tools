@@ -199,42 +199,13 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+visible = false
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 scale = Vector2(4.5, 4.5)
 shape = SubResource("CircleShape2D_e2o6t")
-
-[node name="Sprite2D_walking_down" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 2
-texture_repeat = 1
-position = Vector2(1, -75)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_1jxqw")
-hframes = 4
-vframes = 5
-
-[node name="Sprite2D_walking_up" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 2
-texture_repeat = 1
-position = Vector2(-1, -75)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_dw050")
-hframes = 4
-vframes = 5
-
-[node name="Sprite2D_walking_side" type="Sprite2D" parent="."]
-visible = false
-texture_filter = 2
-texture_repeat = 1
-position = Vector2(-1, -77)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_b26j0")
-hframes = 4
-vframes = 5
 
 [node name="Sprite2D_standing_down" type="Sprite2D" parent="."]
 visible = false
@@ -243,6 +214,16 @@ texture_repeat = 1
 position = Vector2(-1, -75)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_onrkg")
+hframes = 4
+vframes = 4
+
+[node name="Sprite2D_standing_side" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(-1, -85)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_nvl01")
 hframes = 4
 vframes = 4
 
@@ -256,15 +237,35 @@ texture = ExtResource("6_n7ghd")
 hframes = 4
 vframes = 4
 
-[node name="Sprite2D_standing_side" type="Sprite2D" parent="."]
+[node name="Sprite2D_walking_down" type="Sprite2D" parent="."]
 visible = false
 texture_filter = 2
 texture_repeat = 1
-position = Vector2(-1, -85)
+position = Vector2(1, -75)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_nvl01")
+texture = ExtResource("2_1jxqw")
 hframes = 4
-vframes = 4
+vframes = 5
+
+[node name="Sprite2D_walking_side" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(-1, -77)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_b26j0")
+hframes = 4
+vframes = 5
+
+[node name="Sprite2D_walking_up" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(-1, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_dw050")
+hframes = 4
+vframes = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
