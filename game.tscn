@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b20r7ucu5bo00"]
+[gd_scene load_steps=31 format=3 uid="uid://b20r7ucu5bo00"]
 
 [ext_resource type="PackedScene" uid="uid://5sgy0k2htp7b" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://bn803cq6vdevv" path="res://Enemy/Spritesheets enemy/Front - Attacking.png" id="2_lc2xo"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://cqduqg2ho4l67" path="res://Enemy/Spritesheets enemy/Front - Walking.png" id="11_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://dcy028bbjqk3i" path="res://Enemy/Spritesheets enemy/Back - Walking.png" id="12_qhcbd"]
 [ext_resource type="Texture2D" uid="uid://dpb10ytjje6g" path="res://Enemy/Spritesheets enemy/Right - Walking.png" id="13_f1jbl"]
+[ext_resource type="PackedScene" uid="uid://cfgq3704fydj1" path="res://Props/Sprites/decorative_objects.tscn" id="14_80cx4"]
+[ext_resource type="PackedScene" uid="uid://d2mqapk213ips" path="res://Tile Maps/ground.tscn" id="14_215e1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vaj68"]
 
@@ -382,6 +384,7 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_80nbo")]
 
@@ -493,3 +496,16 @@ vframes = 5
 libraries = {
 &"": SubResource("AnimationLibrary_l1i01")
 }
+
+[node name="Ground" parent="." instance=ExtResource("14_215e1")]
+
+[node name="Objects" parent="." instance=ExtResource("14_80cx4")]
+
+[node name="Objects3" parent="." instance=ExtResource("14_80cx4")]
+position = Vector2(1046, 260)
+
+[node name="Objects4" parent="." instance=ExtResource("14_80cx4")]
+position = Vector2(1120, 302)
+
+[node name="Objects2" parent="." instance=ExtResource("14_80cx4")]
+position = Vector2(573, 1185)

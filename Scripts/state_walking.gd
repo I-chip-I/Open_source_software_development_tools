@@ -1,6 +1,6 @@
 class_name State_Walking extends State
 
-@export var move_speed : float = 250.0
+@export var move_speed : float = 300.0
 @onready var standing : State = $"../Standing"
 
 func Enter() -> void:

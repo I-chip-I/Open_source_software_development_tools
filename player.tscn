@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://5sgy0k2htp7b"]
+[gd_scene load_steps=21 format=3 uid="uid://5sgy0k2htp7b"]
 
 [ext_resource type="Script" uid="uid://c63xixmina07g" path="res://Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://ujc8b1gsf2ka" path="res://Player/Spritesheets player/Front - Walking.png" id="2_1jxqw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://ckehyw0trd71u" path="res://Scripts/player_state_machine.gd" id="8_dw050"]
 [ext_resource type="Script" uid="uid://c3tg1oj4p5bp2" path="res://Scripts/state_standing.gd" id="9_b26j0"]
 [ext_resource type="Script" uid="uid://4n8514mgu62" path="res://Scripts/state_walking.gd" id="10_n7ghd"]
+[ext_resource type="Script" uid="uid://brltvey7pfmj5" path="res://Scripts/player_interactions.gd" id="11_nvl01"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e2o6t"]
 
@@ -199,7 +200,9 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-visible = false
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.17453292
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -280,3 +283,8 @@ script = ExtResource("9_b26j0")
 
 [node name="Walking" type="Node" parent="State_Machine"]
 script = ExtResource("10_n7ghd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Interactions" type="Node2D" parent="."]
+script = ExtResource("11_nvl01")

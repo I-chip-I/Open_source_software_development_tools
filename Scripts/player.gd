@@ -11,8 +11,11 @@ class_name Player extends CharacterBody2D
 @onready var state_machine : Player_State_Machine = $State_Machine
 
 var character_direction : Vector2 = Vector2.DOWN
+const all_directions = [ Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP ]
 var direction : Vector2 = Vector2.ZERO
 var current_sprite : Sprite2D = null
+
+signal Direction_changed( new_direction : Vector2 )
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,34 +27,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process( delta ):
-	
-	direction.x = Input.get_action_raw_strength("Right") - Input.get_action_raw_strength("Left")
-	direction.y = Input.get_action_raw_strength("Down") - Input.get_action_raw_strength("Up")
+	direction = Vector2(Input.get_axis("Left", "Right"), Input.get_axis("Up", "Down")).normalized()
 
 func _physics_process( delta ):
 	move_and_slide()
 
 func Set_direction() -> bool:
-	
-	var new_direction : Vector2
 	if direction == Vector2.ZERO:
 		return false
 	
-	if direction.y == 0:
-		if direction.x < 0:
-			new_direction = Vector2.LEFT
-		else:
-			new_direction = Vector2.RIGHT
-	elif direction.x == 0:
-		if direction.y < 0:
-			new_direction = Vector2.UP
-		else:
-			new_direction = Vector2.DOWN
+	var i_direction : int = int( round( ( direction + character_direction * 0.1 ).angle() / (2*PI) * all_directions.size() ) )
+	var new_direction : Vector2 = all_directions[ i_direction ]
 	
 	if new_direction == character_direction:
 		return false
 	
 	character_direction = new_direction
+	Direction_changed.emit( character_direction )
 	return true
 
 func Update_sprite( state : String ) -> void:
@@ -74,7 +66,7 @@ func Update_sprite( state : String ) -> void:
 			_:
 				current_sprite = sprite_player_walking_side
 		
-	if character_direction == Vector2.LEFT:
+	if character_direction.x < 0:
 		current_sprite.flip_h = true
 	else:
 		current_sprite.flip_h = false

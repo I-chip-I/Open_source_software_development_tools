@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfgq3704fydj1"]
+
+[ext_resource type="Texture2D" uid="uid://ork8034o4a71" path="res://Props/Sprites/Plants/Top-Down Simple Summer_Prop - Bushes Medium.png" id="1_n5rv1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2c4t6"]
+size = Vector2(93, 41)
+
+[node name="DecorativeObjects" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-16, -16)
+texture = ExtResource("1_n5rv1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-0.5, 18.5)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_2c4t6")
+debug_color = Color(2.7915835e-06, 0.5200511, 0.70962626, 0.41960785)
