@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://5sgy0k2htp7b"]
+[gd_scene load_steps=32 format=3 uid="uid://5sgy0k2htp7b"]
 
 [ext_resource type="Script" uid="uid://c63xixmina07g" path="res://Scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://ujc8b1gsf2ka" path="res://Player/Spritesheets player/Front - Walking.png" id="2_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://dkhuqoywn0q27" path="res://General Nodes/Hurt Box/hurt_box.tscn" id="2_606se"]
 [ext_resource type="Texture2D" uid="uid://dkvp0m8a1a5b3" path="res://Player/Spritesheets player/Front - Idle Blinking.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://c23ndqx4gwc6y" path="res://Player/Spritesheets player/Back - Walking.png" id="3_dw050"]
 [ext_resource type="Texture2D" uid="uid://dkgwec1xetrdx" path="res://Player/Spritesheets player/Right - Walking.png" id="4_b26j0"]
@@ -9,8 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://oqr7k3oxv71e" path="res://Player/Spritesheets player/Right - Idle Blinking.png" id="7_nvl01"]
 [ext_resource type="Script" uid="uid://ckehyw0trd71u" path="res://Scripts/player_state_machine.gd" id="8_dw050"]
 [ext_resource type="Script" uid="uid://c3tg1oj4p5bp2" path="res://Scripts/state_standing.gd" id="9_b26j0"]
+[ext_resource type="Texture2D" uid="uid://c6j2hv4pdemf" path="res://Player/Spritesheets player/Front - Hurt.png" id="9_u1c27"]
 [ext_resource type="Script" uid="uid://4n8514mgu62" path="res://Scripts/state_walking.gd" id="10_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://d20gypew5bpor" path="res://Player/Spritesheets player/Right - Hurt.png" id="10_op7ga"]
 [ext_resource type="Script" uid="uid://brltvey7pfmj5" path="res://Scripts/player_interactions.gd" id="11_nvl01"]
+[ext_resource type="Texture2D" uid="uid://boy5y6rjyosr3" path="res://Player/Spritesheets player/Back - Hurt.png" id="11_q13i1"]
+[ext_resource type="Texture2D" uid="uid://vnqcvyjwdhpm" path="res://Player/Spritesheets player/Dying.png" id="12_q13i1"]
+[ext_resource type="Script" uid="uid://b515nrisaxuh4" path="res://Scripts/state_hurt.gd" id="15_u1c27"]
+[ext_resource type="Script" uid="uid://d1kf36bs1dqf3" path="res://Scripts/state_dead.gd" id="16_op7ga"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e2o6t"]
 
@@ -87,6 +94,120 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sprite2D_hurt_down:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D_hurt_side:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sprite2D_hurt_up:frame")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprite2D_dead:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7ahtn"]
+resource_name = "dead"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_dead:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07, 0.14, 0.21, 0.28, 0.35, 0.42, 0.49, 0.56, 0.63),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_pylmc"]
+resource_name = "hurt_down"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_hurt_down:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.10000001, 0.15, 0.20000002, 0.25, 0.2999857, 0.35, 0.40000004, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_pbfsw"]
+resource_name = "hurt_side"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_hurt_side:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_5tmop"]
+resource_name = "hurt_up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D_hurt_up:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.10000001, 0.15, 0.2, 0.25, 0.3, 0.3499524, 0.39998838, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
 [sub_resource type="Animation" id="Animation_urp6f"]
@@ -191,6 +312,10 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pylmc"]
 _data = {
 &"RESET": SubResource("Animation_ivps1"),
+&"dead": SubResource("Animation_7ahtn"),
+&"hurt_down": SubResource("Animation_pylmc"),
+&"hurt_side": SubResource("Animation_pbfsw"),
+&"hurt_up": SubResource("Animation_5tmop"),
 &"standing_down": SubResource("Animation_urp6f"),
 &"standing_side": SubResource("Animation_606se"),
 &"standing_up": SubResource("Animation_bwjto"),
@@ -205,8 +330,15 @@ motion_mode = 1
 wall_min_slide_angle = 0.17453292
 script = ExtResource("1_onrkg")
 
+[node name="HurtBox" parent="." instance=ExtResource("2_606se")]
+collision_layer = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+scale = Vector2(4.5, 4.5)
+shape = SubResource("CircleShape2D_e2o6t")
+debug_color = Color(0.88757354, 0.00027896583, 0.80312353, 0.41960785)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 scale = Vector2(4.5, 4.5)
 shape = SubResource("CircleShape2D_e2o6t")
 
@@ -270,6 +402,38 @@ texture = ExtResource("3_dw050")
 hframes = 4
 vframes = 5
 
+[node name="Sprite2D_hurt_down" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_u1c27")
+hframes = 5
+vframes = 2
+
+[node name="Sprite2D_hurt_side" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_op7ga")
+hframes = 5
+vframes = 2
+
+[node name="Sprite2D_hurt_up" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_q13i1")
+hframes = 5
+vframes = 2
+
+[node name="Sprite2D_dead" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_q13i1")
+hframes = 5
+vframes = 2
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_pylmc")
@@ -283,6 +447,12 @@ script = ExtResource("9_b26j0")
 
 [node name="Walking" type="Node" parent="State_Machine"]
 script = ExtResource("10_n7ghd")
+
+[node name="Hurt" type="Node" parent="State_Machine"]
+script = ExtResource("15_u1c27")
+
+[node name="Dead" type="Node" parent="State_Machine"]
+script = ExtResource("16_op7ga")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

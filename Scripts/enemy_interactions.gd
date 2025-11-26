@@ -1,9 +1,9 @@
-class_name Player_Interactions extends Node2D
+class_name Enemy_Interactions extends Node2D
 
-@onready var player : Player = $".."
+@onready var enemy : Enemy = $".."
 
 func _ready():
-	player.Direction_changed.connect( Update_direction )
+	enemy.Direction_changed.connect( Update_direction )
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Update_direction( new_direction : Vector2 ) -> void:

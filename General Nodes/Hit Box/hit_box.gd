@@ -1,5 +1,7 @@
 class_name Hit_Box extends Area2D
 
+signal Player_is_near()
+
 @export var damage : int = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -13,4 +15,5 @@ func _process(delta: float) -> void:
 
 func Entered_area ( body : Area2D ) -> void:
 	if body is Hurt_Box:
+		Player_is_near.emit()
 		body.Get_damage( damage )

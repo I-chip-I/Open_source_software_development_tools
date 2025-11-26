@@ -15,10 +15,18 @@ run/main_scene="uid://b20r7ucu5bo00"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Player_Manager="*res://Scripts/player_manager.gd"
+
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1180
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 [input]
 
