@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Item" load_steps=6 format=3 uid="uid://d24wqp01m60l2"]
+
+[ext_resource type="Script" uid="uid://c7yvhogbgyxqt" path="res://Items/item.gd" id="1_67lo4"]
+[ext_resource type="Texture2D" uid="uid://co7cr5ittdsat" path="res://Items/Fish.png" id="1_fwvj5"]
+[ext_resource type="Script" uid="uid://6ftyqc3oxlp3" path="res://Items/item_use.gd" id="3_mua0f"]
+[ext_resource type="Script" uid="uid://ctp13155hgonj" path="res://Items/use_make_enemy_slip.gd" id="4_qsvhq"]
+
+[sub_resource type="Resource" id="Resource_5ejgm"]
+script = ExtResource("4_qsvhq")
+metadata/_custom_type_script = "uid://ctp13155hgonj"
+
+[resource]
+script = ExtResource("1_67lo4")
+item_name = "spoiled fish"
+item_description = "ew"
+item_texture = ExtResource("1_fwvj5")
+variants_of_use = Array[ExtResource("3_mua0f")]([SubResource("Resource_5ejgm")])
+metadata/_custom_type_script = "uid://c7yvhogbgyxqt"

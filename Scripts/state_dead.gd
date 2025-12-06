@@ -1,6 +1,6 @@
 class_name State_Dead extends State
 
-@export var knock_back_speed : float = 100.0
+@export var knock_back_speed : float = 300.0
 var timer : float = 2.0
 
 func Enter() -> void:

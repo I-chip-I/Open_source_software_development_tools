@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://crb7fqi8rnsb8"]
+
+[ext_resource type="Script" uid="uid://bk8chkdggo04k" path="res://GUI/Inventory/inventory_slot_manager.gd" id="1_dcmf3"]
+[ext_resource type="Texture2D" uid="uid://c4uknjwj02qu2" path="res://GUI/Inventory/Textures for inventory/slot without frame.png" id="2_dcmf3"]
+[ext_resource type="Texture2D" uid="uid://c7dw1rgittd6d" path="res://GUI/Inventory/Textures for inventory/slot with frame.png" id="3_8a52n"]
+[ext_resource type="Texture2D" uid="uid://6jnuulkhctpl" path="res://Items/Paper.png" id="3_v1skv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlrrd"]
+atlas = ExtResource("2_dcmf3")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1skv"]
+atlas = ExtResource("3_8a52n")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7yqn"]
+atlas = ExtResource("3_v1skv")
+
+[node name="InventorySlotButton" type="Button"]
+custom_minimum_size = Vector2(128, 128)
+offset_right = 120.0
+offset_bottom = 128.0
+script = ExtResource("1_dcmf3")
+
+[node name="TextureRect_slot" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_qlrrd")
+stretch_mode = 5
+
+[node name="TextureRect_selected_slot" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_v1skv")
+stretch_mode = 5
+
+[node name="TextureRect_item" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_f7yqn")
+stretch_mode = 5
+
+[node name="Label_item_description" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 993.0
+offset_top = 326.0
+offset_right = 1268.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.7647059)
+theme_override_font_sizes/font_size = 24
+text = "Жук и рак сошлись у речки разговаривать словечки..."
+autowrap_mode = 2

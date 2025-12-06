@@ -13,7 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func Entered_area ( body : Area2D ) -> void:
+func Entered_area( body : Area2D ) -> void:
 	if body is Hurt_Box:
 		Player_is_near.emit()
 		body.Get_damage( damage )

@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkc5sl7woc81v"]
+
+[ext_resource type="Script" uid="uid://c7ldu5nny2rpg" path="res://Scripts/fading.gd" id="1_7sd2g"]
+[ext_resource type="FontFile" uid="uid://b8pmr38fklbrh" path="res://GUI/SansSerifCollection.ttf" id="2_x8bdc"]
+
+[sub_resource type="Animation" id="Animation_xu7hh"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.09992393, 0.19993657),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.39215687), Color(0, 0, 0, 0.78431374)]
+}
+
+[sub_resource type="Animation" id="Animation_abjgy"]
+resource_name = "fading"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.39215687), Color(0, 0, 0, 0.78431374)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pmjk2"]
+_data = {
+&"RESET": SubResource("Animation_xu7hh"),
+&"fading": SubResource("Animation_abjgy")
+}
+
+[node name="EndScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_7sd2g")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+libraries = {
+&"": SubResource("AnimationLibrary_pmjk2")
+}
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -85.0
+offset_right = 336.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_x8bdc")
+theme_override_font_sizes/font_size = 64
+text = "Thank   you   for   playing!"
+horizontal_alignment = 1

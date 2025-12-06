@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b60qqj3ncyml"]
+
+[ext_resource type="Texture2D" uid="uid://dkvp0m8a1a5b3" path="res://Player/Spritesheets for player/Front - Idle Blinking.png" id="1_6jqeu"]
+
+[node name="PlayerSpawner" type="Node2D"]
+
+[node name="Sprite2D_standing_down" type="Sprite2D" parent="."]
+modulate = Color(0.58431375, 1, 0.49019608, 0.88235295)
+texture_filter = 2
+texture_repeat = 1
+position = Vector2(-1, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_6jqeu")
+hframes = 4
+vframes = 4

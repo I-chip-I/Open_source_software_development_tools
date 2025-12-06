@@ -3,7 +3,7 @@ class_name State_Hurt extends State
 @onready var standing : State = $"../Standing"
 @onready var walking : State = $"../Walking"
 
-@export var knock_back_speed : float = 100.0
+@export var knock_back_speed : float = 300.0
 @export var is_invulnerable : bool
 var end_of_animation : bool
 

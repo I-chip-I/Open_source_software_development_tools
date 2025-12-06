@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://0i6ncn6gjlrp"]
+
+[ext_resource type="Script" uid="uid://cbirsxx0q0xkf" path="res://GUI/Pause menu/pause_menu.gd" id="1_n7wmo"]
+[ext_resource type="FontFile" uid="uid://b8pmr38fklbrh" path="res://GUI/SansSerifCollection.ttf" id="2_nvi3x"]
+
+[sub_resource type="FontFile" id="FontFile_n7wmo"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_n7wmo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -381.0
+offset_top = 190.0
+offset_right = 419.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.34901962, 0.34901962, 0.34901962, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -180.0
+offset_right = 215.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Button_Save" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nvi3x")
+theme_override_font_sizes/font_size = 40
+text = "Save"
+
+[node name="Button_Load" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nvi3x")
+theme_override_font_sizes/font_size = 40
+text = "Load"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -289.99994
+offset_right = 182.0
+offset_bottom = -202.99994
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontFile_n7wmo")
+theme_override_font_sizes/font_size = 64
+text = "Pause menu"

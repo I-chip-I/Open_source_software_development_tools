@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=5 format=3 uid="uid://do3e6keen4srs"]
+
+[ext_resource type="Script" uid="uid://bs2cu037rfh8l" path="res://GUI/Inventory/inventory_slot.gd" id="1_opfcd"]
+[ext_resource type="Script" uid="uid://cqnu0j6seyy28" path="res://GUI/Inventory/inventory.gd" id="2_2hsbe"]
+[ext_resource type="Resource" uid="uid://d24wqp01m60l2" path="res://Items/fish.tres" id="3_2pvxp"]
+
+[sub_resource type="Resource" id="Resource_pge86"]
+script = ExtResource("1_opfcd")
+item_data = ExtResource("3_2pvxp")
+metadata/_custom_type_script = "uid://bs2cu037rfh8l"
+
+[resource]
+script = ExtResource("2_2hsbe")
+inventory_slots = Array[ExtResource("1_opfcd")]([null, null, null, null, SubResource("Resource_pge86"), null, null, null])
+metadata/_custom_type_script = "uid://cqnu0j6seyy28"

@@ -3,16 +3,19 @@ class_name Enemy_State extends Node
 var enemy : Enemy
 var state_machine : Enemy_State_Machine
 
+
 func Init() -> void:
 	pass
+
 
 func Enter() -> void:
 	pass
 
+
 func Exit() -> void:
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func Process( delta : float ) -> Enemy_State:
 	return null
 

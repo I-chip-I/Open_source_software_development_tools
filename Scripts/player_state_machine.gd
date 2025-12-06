@@ -10,14 +10,6 @@ func _ready() -> void:
 func _process( delta ):
 	Change_state( current_state.Process( delta ) )
 
-#func _physics_process( delta ):
-	#Change_state( current_state.Physics( delta ) )
-	#pass
-
-#func _unhandled_input ( event ):
-#	Change_state(current_state.HandleInput( event ) )
-#	pass
-
 func Initialize_state( player : Player ) -> void:
 	states = []
 	

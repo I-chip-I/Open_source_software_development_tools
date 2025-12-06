@@ -30,16 +30,17 @@ func _ready() -> void:
 	
 	player = Player_Manager.player
 	enemy_state_machine.Initialize_state( self )
-	hit_box.Player_is_near.connect( Attack_player )
 	hit_box.monitoring = true
+	hit_box.Player_is_near.connect( Attack_player )
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
+
 func _physics_process( delta ):
 	move_and_slide()
+
 
 func Set_direction( current_direction : Vector2 ) -> bool:
 	direction = current_direction
@@ -55,6 +56,7 @@ func Set_direction( current_direction : Vector2 ) -> bool:
 	character_direction = new_direction
 	Direction_changed.emit( character_direction )
 	return true
+
 
 func Update_sprite( state : String ) -> void:
 	current_sprite.visible = false
@@ -89,9 +91,10 @@ func Update_sprite( state : String ) -> void:
 	else:
 		current_sprite.flip_h = false
 
+
 func Update_animation(state : String) -> void:
 	animation_enemy.play(state + "_" + Get_animation_direction())
-	pass
+
 
 func Get_animation_direction() -> String:
 	if character_direction == Vector2.DOWN:
@@ -101,5 +104,9 @@ func Get_animation_direction() -> String:
 	else:
 		return "side"
 
+
 func Attack_player() -> void:
+	if player.health_points <= 0:
+		return
+	
 	enemy_state_machine.Change_state( attacking )

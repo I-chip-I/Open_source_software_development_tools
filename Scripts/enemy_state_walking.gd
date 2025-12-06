@@ -1,6 +1,6 @@
 class_name Enemy_State_Walking extends Enemy_State
 
-@export var move_speed : float = 300.0
+@export var move_speed : float = 500.0
 @onready var standing : Enemy_State = $"../Standing"
 
 @export var state_duration : float = 1.0

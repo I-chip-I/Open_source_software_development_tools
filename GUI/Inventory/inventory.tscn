@@ -1,0 +1,131 @@
+[gd_scene load_steps=6 format=3 uid="uid://gy08bmr665xm"]
+
+[ext_resource type="Script" uid="uid://4ho7o3swsfal" path="res://GUI/Inventory/inventory_menu.gd" id="1_ja6kd"]
+[ext_resource type="FontFile" uid="uid://b8pmr38fklbrh" path="res://GUI/SansSerifCollection.ttf" id="2_ewc0g"]
+[ext_resource type="Resource" uid="uid://do3e6keen4srs" path="res://GUI/Inventory/player_inventory.tres" id="2_lgn1t"]
+[ext_resource type="PackedScene" uid="uid://crb7fqi8rnsb8" path="res://GUI/Inventory/inventory_slot_button.tscn" id="4_wlp85"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewc0g"]
+bg_color = Color(0.3019608, 0.17254902, 0.105882354, 1)
+
+[node name="Inventory" type="CanvasLayer"]
+process_mode = 3
+layer = 0
+script = ExtResource("1_ja6kd")
+inventory = ExtResource("2_lgn1t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -380.0
+offset_top = 190.0
+offset_right = 420.0
+offset_bottom = -190.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.30042946, 0.17174846, 0.107349284, 1)
+
+[node name="Frame" type="ColorRect" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 21.000061
+offset_top = 316.00003
+offset_right = 3371.0
+offset_bottom = 1816.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+color = Color(0.7607843, 0.47058824, 0.28235295, 1)
+
+[node name="DesriptionSheet" type="ColorRect" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 318.0
+offset_right = 3324.0
+offset_bottom = 1768.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+color = Color(0.94509804, 0.9254902, 0.85490197, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -415.0
+offset_right = 128.0
+offset_bottom = -287.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ewc0g")
+theme_override_font_sizes/font_size = 48
+text = "Inventory"
+
+[node name="ItemDescription" type="Label" parent="."]
+offset_left = 993.0
+offset_top = 326.0
+offset_right = 1268.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.7647059)
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 695.0
+offset_top = 630.0
+offset_right = -649.0
+offset_bottom = -278.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ewc0g")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 4
+
+[node name="Slot_1" parent="PanelContainer/GridContainer" instance=ExtResource("4_wlp85")]
+layout_mode = 2
+
+[node name="Slot_2" parent="PanelContainer/GridContainer" instance=ExtResource("4_wlp85")]
+layout_mode = 2
+
+[node name="Slot_3" parent="PanelContainer/GridContainer" instance=ExtResource("4_wlp85")]
+layout_mode = 2
+
+[node name="Slot_4" parent="PanelContainer/GridContainer" instance=ExtResource("4_wlp85")]
+layout_mode = 2
+
+[node name="Slot_5" parent="PanelContainer/GridContainer" instance=ExtResource("4_wlp85")]
+layout_mode = 2
+
+[node name="Slot_6" parent="PanelContainer/GridContainer" instance=ExtResource("4_wlp85")]
+layout_mode = 2
+
+[node name="Slot_7" parent="PanelContainer/GridContainer" instance=ExtResource("4_wlp85")]
+layout_mode = 2
+
+[node name="Slot_8" parent="PanelContainer/GridContainer" instance=ExtResource("4_wlp85")]
+layout_mode = 2

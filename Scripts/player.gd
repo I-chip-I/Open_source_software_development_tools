@@ -23,7 +23,7 @@ var current_sprite : Sprite2D = null
 
 signal Direction_changed( new_direction : Vector2 )
 
-@export var health_points : int = 3
+var health_points : int = 3
 var is_invulnerable : bool = false
 
 func _ready():
@@ -46,7 +46,7 @@ func Set_direction() -> bool:
 	if direction == Vector2.ZERO:
 		return false
 	
-	var i_direction : int = int( round( ( direction + character_direction * 0.1 ).angle() / (2*PI) * all_directions.size() ) )
+	var i_direction : int = int( round( ( direction + character_direction * 0.1 ).angle() / TAU * all_directions.size() ) )
 	var new_direction : Vector2 = all_directions[ i_direction ]
 	
 	if new_direction == character_direction:
@@ -110,9 +110,11 @@ func Got_damage( damage : int ) -> void:
 		return
 	
 	health_points = health_points - damage
+	var load_operation : bool = false
+	Player_Hud.Update_health_points( load_operation, health_points )
 	
 	if health_points > 0:
 		state_machine.Change_state( hurt )
 	else:
-		print("Dead")
+		is_invulnerable = true
 		state_machine.Change_state( dead )

@@ -4,14 +4,12 @@ var states : Array[ Enemy_State ]
 var last_state : Enemy_State
 var current_state : Enemy_State
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	Change_state( current_state.Process( delta ) )
-	pass
 
 #func _physics_process( delta ):
 	#Change_state( current_state.Physics( delta ) )
@@ -32,6 +30,7 @@ func Initialize_state( enemy : Enemy ) -> void:
 	if states.size() > 0:
 		Change_state( states[0] )
 		process_mode = Node.PROCESS_MODE_INHERIT
+
 
 func Change_state( new_state : Enemy_State) -> void:
 	if new_state == null:

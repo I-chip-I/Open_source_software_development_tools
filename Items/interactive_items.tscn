@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfe5f1fowbqjq"]
+
+[ext_resource type="Script" uid="uid://dpu7lu110jek4" path="res://Items/interactive_items.gd" id="1_dgyrb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lmetk"]
+radius = 40.0
+
+[node name="InteractiveItems" type="Node2D"]
+script = ExtResource("1_dgyrb")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_lmetk")
+debug_color = Color(0.049209334, 0.63437206, 0.41891006, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

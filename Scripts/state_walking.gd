@@ -1,6 +1,6 @@
 class_name State_Walking extends State
 
-@export var move_speed : float = 300.0
+@export var move_speed : float = 500.0
 @onready var standing : State = $"../Standing"
 
 func Enter() -> void:
@@ -9,7 +9,6 @@ func Enter() -> void:
 func Exit() -> void:
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func Process( delta : float ) -> State:
 	if player.direction == Vector2.ZERO:
 		return standing
@@ -20,11 +19,4 @@ func Process( delta : float ) -> State:
 	player.Update_sprite( "walking" )
 	player.current_sprite.visible = true
 	player.Update_animation( "walking" )
-	
 	return null
-
-#func Physics( delta : float ) -> State:
-#	return null
-
-#func HandleInput ( event : Inputevent ) -> State:
-#	return null

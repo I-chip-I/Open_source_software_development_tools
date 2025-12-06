@@ -5,7 +5,7 @@ class_name Enemy_Interactions extends Node2D
 func _ready():
 	enemy.Direction_changed.connect( Update_direction )
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func Update_direction( new_direction : Vector2 ) -> void:
 	match new_direction:
 		Vector2.DOWN:
@@ -18,4 +18,3 @@ func Update_direction( new_direction : Vector2 ) -> void:
 			rotation_degrees = 270
 		_:
 			rotation_degrees = 0
-	pass
